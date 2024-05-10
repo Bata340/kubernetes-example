@@ -5,8 +5,9 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-  - host: test-api-k8s.com  # Cambia esto al dominio que quieras usar
+  - host: local.innovid.com  # Cambia esto al dominio que quieras usar
     http:
       paths:
       - path: /
@@ -14,5 +15,5 @@ spec:
         backend:
           service:
             name: test-app-with-manifest-lb
-            port:
+            port: 
               number: 80
